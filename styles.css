@@ -372,7 +372,7 @@ blockquote cite {
     min-height: 430px;
     display: flex;
     align-items: flex-end;
-    background-image: url("images/offering-banner.png");
+    background-image: url("images/offering-banner.svg");
     background-position: center;
     background-size: cover;
     overflow: hidden;
