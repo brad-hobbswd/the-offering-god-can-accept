@@ -159,16 +159,17 @@ em {
    ========================================= */
 
 .hero {
-    width: 100%;
-    background: #201c18;
+    width: min(calc(100% - 40px), 1100px);
+    margin: 28px auto 0;
+    background: transparent;
     overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: auto;
-    min-height: 240px;
-    object-fit: cover;
+    height: clamp(190px, 29vw, 340px);
+    min-height: 0;
+    object-fit: contain;
     object-position: center;
 }
 
@@ -368,43 +369,39 @@ blockquote cite {
    ========================================= */
 
 .author-hero {
-    position: relative;
-    min-height: 430px;
+    width: min(calc(100% - 40px), 1100px);
+    margin: 28px auto 0;
     display: flex;
-    align-items: flex-end;
-    background-image: url("images/offering-banner.svg");
-    background-position: center;
-    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     overflow: hidden;
 }
 
-.author-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(25, 21, 17, 0.86),
-        rgba(25, 21, 17, 0.15)
-    );
+.author-hero-image {
+    display: block;
+    width: 100%;
+    height: clamp(190px, 29vw, 340px);
+    object-fit: contain;
+    object-position: center;
 }
 
 .author-hero-overlay {
-    position: relative;
-    width: min(calc(100% - 40px), var(--wide-width));
+    width: min(100%, var(--max-width));
     margin: 0 auto;
-    padding: 80px 0 65px;
-    color: white;
+    padding: 8px 0 0;
+    color: var(--text);
+    text-align: center;
 }
 
 .author-hero-overlay h1 {
-    color: white;
+    color: var(--heading);
     margin-bottom: 10px;
 }
 
 .author-hero-overlay p:last-child {
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--muted);
     font-family: "Cormorant Garamond", serif;
     font-size: 1.5rem;
 }
@@ -516,8 +513,15 @@ blockquote cite {
         font-size: 0.82rem;
     }
 
-    .hero-image {
-        min-height: 180px;
+    .hero,
+    .author-hero {
+        width: calc(100% - 24px);
+        margin-top: 16px;
+    }
+
+    .hero-image,
+    .author-hero-image {
+        height: clamp(150px, 42vw, 230px);
     }
 
     .reading-container {
@@ -579,13 +583,9 @@ blockquote cite {
         font-size: 1.55rem;
     }
 
-    .author-hero {
-        min-height: 320px;
-    }
-
     .author-hero-overlay {
-        width: calc(100% - 28px);
-        padding: 60px 0 40px;
+        width: 100%;
+        padding: 4px 0 0;
     }
 
     .author-hero-overlay h1 {
