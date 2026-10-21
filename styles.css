@@ -159,7 +159,7 @@ em {
    ========================================= */
 
 .hero {
-    width: min(calc(100% - 40px), 1100px);
+    width: min(calc(100% - 40px), var(--max-width));
     margin: 28px auto 0;
     background: transparent;
     overflow: hidden;
@@ -167,7 +167,7 @@ em {
 
 .hero-image {
     width: 100%;
-    height: clamp(190px, 29vw, 340px);
+    height: auto;
     min-height: 0;
     object-fit: contain;
     object-position: center;
@@ -369,7 +369,7 @@ blockquote cite {
    ========================================= */
 
 .author-hero {
-    width: min(calc(100% - 40px), 1100px);
+    width: min(calc(100% - 40px), var(--max-width));
     margin: 28px auto 0;
     display: flex;
     flex-direction: column;
@@ -381,7 +381,7 @@ blockquote cite {
 .author-hero-image {
     display: block;
     width: 100%;
-    height: clamp(190px, 29vw, 340px);
+    height: auto;
     object-fit: contain;
     object-position: center;
 }
@@ -521,7 +521,7 @@ blockquote cite {
 
     .hero-image,
     .author-hero-image {
-        height: clamp(150px, 42vw, 230px);
+        height: auto;
     }
 
     .reading-container {
