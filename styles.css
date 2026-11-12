@@ -429,6 +429,70 @@ blockquote cite {
 }
 
 
+.author-book-feature {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 55px auto 0;
+    padding: 42px;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.5fr);
+    align-items: center;
+    gap: 42px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.author-book-cover {
+    display: flex;
+    justify-content: center;
+}
+
+.author-book-cover img {
+    display: block;
+    width: min(100%, 340px);
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
+.author-book-description h2 {
+    margin: 0 0 18px;
+    color: var(--heading);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.author-book-description p {
+    max-width: 720px;
+}
+
+.study-reading-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 22px;
+    background: var(--gold-dark);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.study-reading-link:hover {
+    opacity: 0.88;
+}
+
+@media (max-width: 700px) {
+    .author-book-feature {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px 22px;
+    }
+
+    .author-book-cover img {
+        width: min(78%, 300px);
+    }
+}
+
 /* =========================================
    SITE FOOTER
    ========================================= */
